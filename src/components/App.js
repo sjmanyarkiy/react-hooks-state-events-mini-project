@@ -20,6 +20,10 @@ function App() {
     setSelectedCategory(category)
   }
 
+  function handleAddTask(newTask) {
+    setTasks([...tasks, newTask]);
+  }
+
   return (
     <div className="App">
       <h2>My tasks</h2>
