@@ -20,7 +20,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
     ));
 
   return (
-    <form className="new-task-form">
+    <form className="new-task-form" onSubmit={handleSubmit}>
       <label>
         Details
         <input type="text" name="text" />
