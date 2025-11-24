@@ -1,13 +1,11 @@
 import React, { useState } from "react";
 import Task from './Task'
 
-function TaskList({tasks}) {
+function TaskList({tasks, onDelete}) {
 
   const displayTasks = tasks.map((task) => {
-    return <Task key={task.id} task={task} onDelete={onDelete}/>
+    return <Task key={task.id} task={task} handleDelete={onDelete}/>
   })
-
-
 
   return (
     <div className="tasks">
