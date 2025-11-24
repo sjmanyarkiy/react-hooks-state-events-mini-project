@@ -1,8 +1,7 @@
 import React from "react";
+function Task({ task = {}, onDeleteTask = () => {}}) {
 
-function Task({ task, onDeleteTask}) {
-
-  const { category, text } = task;
+  const { category, text } = task; 
   
   return (
     <div className="task">

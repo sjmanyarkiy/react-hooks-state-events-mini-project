@@ -1,25 +1,23 @@
+// File: newtaskform.js (Verify you have this version)
+
 import React, { useState } from "react";
 
 function NewTaskForm({ categories, onTaskFormSubmit }) {
-  
   const [text, setText] = useState("");
   
- 
   const defaultCategory = categories.find((cat) => cat !== "All");
   const [category, setCategory] = useState(defaultCategory || "");
 
-  
   const handleSubmit = (event) => {
     event.preventDefault(); 
 
     const newTask = { text, category };
-
-    onTaskFormSubmit(newTask);
+    onTaskFormSubmit(newTask); 
 
     setText("");
+    setCategory(defaultCategory || "");
   };
 
-  
   const categoryOptions = categories
     .filter((cat) => cat !== "All")
     .map((cat) => (
@@ -35,7 +33,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
         <input
           type="text"
           name="text"
-          value={text}
+          value={text} 
           onChange={(e) => setText(e.target.value)}
         />
       </label>
@@ -46,7 +44,7 @@ function NewTaskForm({ categories, onTaskFormSubmit }) {
           value={category}
           onChange={(e) => setCategory(e.target.value)}
         >
-          {categoryOptions} {/* Render the filtered options */}
+          {categoryOptions}
         </select>
       </label>
       <input type="submit" value="Add task" />
