@@ -3,11 +3,10 @@ import Task from './Task'
 
 function TaskList({tasks}) {
 
-  // const [tasks, setTasks ] = useState([]);
-
   const displayTasks = tasks.map((task) => {
-        return <Task key={task.id} task={task}/>
-      })
+    return <Task key={task.id} task={task} onDelete={onDelete}/>
+  })
+
 
 
   return (
