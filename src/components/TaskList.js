@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import Task from './Task'
 
-function TaskList({tasks, onDelete}) {
+function TaskList({ tasks, onDeleteTask }) {
 
-  const displayTasks = tasks.map((task) => (
-    <Task key={task.text} task={task} onDeleteTask={onDelete} />
-  ));
+  // const [tasks, setTasks ] = useState([]);
+
+  const displayTasks = tasks.map((task, index) => {
+        return <Task key={index} task={task} onDeleteTask={onDeleteTask}/>
+      })
+
 
   return (
     <div className="tasks">
